@@ -13,6 +13,8 @@
 		83B9EBC91518288B00718F02 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 83B9EBC71518288B00718F02 /* Credits.rtf */; };
 		83B9EBCC1518288B00718F02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B9EBCB1518288B00718F02 /* AppDelegate.m */; };
 		83B9EBCF1518288C00718F02 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B9EBCD1518288C00718F02 /* MainMenu.xib */; };
+		83B9EBD71518337700718F02 /* SnakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B9EBD61518337700718F02 /* SnakeView.m */; };
+		83B9EBDE1518729A00718F02 /* Snake.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B9EBDD1518729A00718F02 /* Snake.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +23,18 @@
 		83B9EBBB1518288B00718F02 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		83B9EBBC1518288B00718F02 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		83B9EBBD1518288B00718F02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		83B9EBC01518288B00718F02 /* Snake-Info.plist */ = {isa = PBXFileReference; path = "Snake-Info.plist"; sourceTree = "<group>"; };
+		83B9EBC01518288B00718F02 /* Snake-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Snake-Info.plist"; sourceTree = "<group>"; };
 		83B9EBC21518288B00718F02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83B9EBC41518288B00718F02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		83B9EBC61518288B00718F02 /* Snake-Prefix.pch */ = {isa = PBXFileReference; path = "Snake-Prefix.pch"; sourceTree = "<group>"; };
+		83B9EBC61518288B00718F02 /* Snake-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snake-Prefix.pch"; sourceTree = "<group>"; };
 		83B9EBC81518288B00718F02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		83B9EBCA1518288B00718F02 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		83B9EBCA1518288B00718F02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83B9EBCB1518288B00718F02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		83B9EBCE1518288C00718F02 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		83B9EBD51518337700718F02 /* SnakeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeView.h; sourceTree = "<group>"; };
+		83B9EBD61518337700718F02 /* SnakeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakeView.m; sourceTree = "<group>"; };
+		83B9EBDC1518729A00718F02 /* Snake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snake.h; sourceTree = "<group>"; };
+		83B9EBDD1518729A00718F02 /* Snake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snake.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +90,12 @@
 			children = (
 				83B9EBCA1518288B00718F02 /* AppDelegate.h */,
 				83B9EBCB1518288B00718F02 /* AppDelegate.m */,
+				83B9EBD51518337700718F02 /* SnakeView.h */,
+				83B9EBD61518337700718F02 /* SnakeView.m */,
 				83B9EBCD1518288C00718F02 /* MainMenu.xib */,
 				83B9EBBF1518288B00718F02 /* Supporting Files */,
+				83B9EBDC1518729A00718F02 /* Snake.h */,
+				83B9EBDD1518729A00718F02 /* Snake.m */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -167,6 +177,8 @@
 			files = (
 				83B9EBC51518288B00718F02 /* main.m in Sources */,
 				83B9EBCC1518288B00718F02 /* AppDelegate.m in Sources */,
+				83B9EBD71518337700718F02 /* SnakeView.m in Sources */,
+				83B9EBDE1518729A00718F02 /* Snake.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
