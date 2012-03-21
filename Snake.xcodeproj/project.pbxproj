@@ -16,6 +16,7 @@
 		83B9EBCF1518288C00718F02 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B9EBCD1518288C00718F02 /* MainMenu.xib */; };
 		83B9EBD71518337700718F02 /* SnakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B9EBD61518337700718F02 /* SnakeView.m */; };
 		83B9EBDE1518729A00718F02 /* Snake.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B9EBDD1518729A00718F02 /* Snake.m */; };
+		A96756C21519B88C000213D4 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = A96756C11519B88C000213D4 /* map.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		83B9EBD61518337700718F02 /* SnakeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakeView.m; sourceTree = "<group>"; };
 		83B9EBDC1518729A00718F02 /* Snake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snake.h; sourceTree = "<group>"; };
 		83B9EBDD1518729A00718F02 /* Snake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snake.m; sourceTree = "<group>"; };
+		A96756C11519B88C000213D4 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				8304FC6C1519A92E008B2334 /* Food.h */,
 				8304FC6D1519A92E008B2334 /* Food.m */,
 				83B9EBCD1518288C00718F02 /* MainMenu.xib */,
+				A96756C11519B88C000213D4 /* map.txt */,
 				83B9EBBF1518288B00718F02 /* Supporting Files */,
 			);
 			path = Snake;
@@ -172,6 +175,7 @@
 				83B9EBC31518288B00718F02 /* InfoPlist.strings in Resources */,
 				83B9EBC91518288B00718F02 /* Credits.rtf in Resources */,
 				83B9EBCF1518288C00718F02 /* MainMenu.xib in Resources */,
+				A96756C21519B88C000213D4 /* map.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
