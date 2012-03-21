@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8304FC6E1519A92F008B2334 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304FC6D1519A92E008B2334 /* Food.m */; };
 		83B9EBB91518288B00718F02 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B9EBB81518288B00718F02 /* Cocoa.framework */; };
 		83B9EBC31518288B00718F02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83B9EBC11518288B00718F02 /* InfoPlist.strings */; };
 		83B9EBC51518288B00718F02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B9EBC41518288B00718F02 /* main.m */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8304FC6C1519A92E008B2334 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		8304FC6D1519A92E008B2334 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		8304FC6F1519A9A1008B2334 /* SnakeState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeState.h; sourceTree = "<group>"; };
 		83B9EBB41518288B00718F02 /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B9EBB81518288B00718F02 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		83B9EBBB1518288B00718F02 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -92,10 +96,13 @@
 				83B9EBCB1518288B00718F02 /* AppDelegate.m */,
 				83B9EBD51518337700718F02 /* SnakeView.h */,
 				83B9EBD61518337700718F02 /* SnakeView.m */,
-				83B9EBCD1518288C00718F02 /* MainMenu.xib */,
-				83B9EBBF1518288B00718F02 /* Supporting Files */,
+				8304FC6F1519A9A1008B2334 /* SnakeState.h */,
 				83B9EBDC1518729A00718F02 /* Snake.h */,
 				83B9EBDD1518729A00718F02 /* Snake.m */,
+				8304FC6C1519A92E008B2334 /* Food.h */,
+				8304FC6D1519A92E008B2334 /* Food.m */,
+				83B9EBCD1518288C00718F02 /* MainMenu.xib */,
+				83B9EBBF1518288B00718F02 /* Supporting Files */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 				83B9EBCC1518288B00718F02 /* AppDelegate.m in Sources */,
 				83B9EBD71518337700718F02 /* SnakeView.m in Sources */,
 				83B9EBDE1518729A00718F02 /* Snake.m in Sources */,
+				8304FC6E1519A92F008B2334 /* Food.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +306,7 @@
 				83B9EBD41518288C00718F02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

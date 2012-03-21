@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SnakeState.h"
 enum {
     goLeft = 0,
     goRight = 1,
@@ -18,20 +18,38 @@ typedef NSUInteger SnakeDirection;
 
 @interface Snake : NSObject
 {
-    SnakeDirection direction;
-    BOOL isMove;
-    BOOL hasEaten;
-    CGPoint head;
-    int  length;
+    id<SnakeState>  delegate;
+
+    SnakeDirection direction;     //snake move direction
+    BOOL isMove;                  //move or die
+    BOOL hasEaten;                //has the snake eat food
+    CGPoint head;                 //the head of snake's frame X and Y   (Deprecate maybe)
+    int  length;                  //snake length, body number
+    NSMutableArray *bodyArray;    //store the snake's bodies
 }
 
+@property (assign) id<SnakeState>  delegate;
 @property (assign) CGPoint head;
 @property (assign) int  length;
 @property (assign) BOOL hasEaten;
 @property (assign) BOOL isMove;
 @property (assign) SnakeDirection direction;
+@property (nonatomic,retain) NSMutableArray *bodyArray;
 
 - (id)initSnake;
-- (void)didMoveToDirection:(SnakeDirection)direction;
+- (void)move;
+- (void)detectSnakeState;
+- (void)didMoveToDirection:(SnakeDirection)sdirection;
+@end
+
+
+// the class only to store body's frame
+@interface SnakeBody : NSObject
+{
+    CGRect bodyRect;         //the CGRect of body
+}
+@property (assign) CGRect bodyRect;
+
+- (id)initWithX:(int)x andY:(int)y;
 
 @end

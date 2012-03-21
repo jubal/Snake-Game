@@ -7,9 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SnakeState.h"
 
 @class Snake;
-@interface SnakeView : NSView
+@interface SnakeView: NSView <SnakeState>
 {
     Snake *snake;
     NSTimer *timer;
@@ -18,4 +19,5 @@
 @property (nonatomic,retain) Snake *snake;
 
 - (void)gameInit;
+- (void)gameOver;
 @end

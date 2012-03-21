@@ -15,18 +15,28 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self gameInit];
+        [self gameInit];     //start the game
     }
     
     return self;
 }
 
+- (void)dealloc
+{
+    [snake release];
+	[super dealloc];
+}
+
 - (void)gameInit
 {
-    Snake *aSnake = [[Snake alloc] initSnake];
+    //initialize the snake
+    Snake *aSnake = [[Snake alloc] initSnake];  
     self.snake = aSnake;
     [aSnake release];
     
+    //init food............
+    
+    //start the game timer
     [self performSelectorOnMainThread:@selector(gamePlay) withObject:nil waitUntilDone:YES];
     
     timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(gamePlay) userInfo:nil repeats:YES];
@@ -34,24 +44,37 @@
 
 - (void)gamePlay
 {
-    [self.snake didMoveToDirection:goDown];
+    //move the snake 
+    [self.snake move];
     
+    //update the game's view
     [self setNeedsDisplay:YES];
+}
 
+- (void)gameOver
+{
+    //..........
 }
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    CGPoint p = self.snake.head;
-    NSRect frame = CGRectMake(p.x, p.y, 10, 10);
+    // set body color of the snake to darkGrayColor
     [[NSColor darkGrayColor] set];
-    NSRectFill(frame);
+
+    //get every body of the snake, and draw using NSRectFill
+    for (int i = 0; i < self.snake.length; i++) {
+        SnakeBody *body = [self.snake.bodyArray objectAtIndex:i];
+        NSRectFill(body.bodyRect);
+    }
 }
 
 - (BOOL)isFlipped
 {
+    //let coordinnates start in the upper-left
     return YES;
 }
+
+#pragma mark keyboard 
 
 - (BOOL)acceptsFirstResponder 
 { 
@@ -60,8 +83,8 @@
 
 - (void)keyDown: (NSEvent *) event 
 { 
+    // the key ADWS for change the direction of the snake
     NSString *chars = [event characters]; 
-    NSLog(@"%@",chars);
     
     if ([chars isEqualToString:@"s"]) {
         [self.snake didMoveToDirection:goDown];
@@ -76,5 +99,12 @@
         [self.snake didMoveToDirection:goRight];
     }
     
-} 
+}
+
+#pragma mark SnakeState delegate
+
+- (void)SnakeDidDie
+{
+    [self gameOver];
+}
 @end
