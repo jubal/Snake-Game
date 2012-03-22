@@ -86,6 +86,7 @@
     // the key ADWS for change the direction of the snake
     NSString *chars = [event characters]; 
     
+    
     if ([chars isEqualToString:@"s"]) {
         [self.snake didMoveToDirection:goDown];
     }
