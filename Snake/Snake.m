@@ -7,7 +7,7 @@
 //
 
 #import "Snake.h"
-// hello zhung
+// fxxk zhung 
 @implementation Snake
 @synthesize direction,head,length,isMove,hasEaten,bodyArray,delegate;
 
