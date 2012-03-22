@@ -9,6 +9,7 @@
 #import "SnakeView.h"
 #import "Snake.h"
 
+// test git
 @implementation SnakeView
 @synthesize snake;
 - (id)initWithFrame:(NSRect)frame
@@ -85,6 +86,7 @@
 { 
     // the key ADWS for change the direction of the snake
     NSString *chars = [event characters]; 
+    
     
     if ([chars isEqualToString:@"s"]) {
         [self.snake didMoveToDirection:goDown];
