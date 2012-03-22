@@ -9,7 +9,7 @@
 #import "Snake.h"
 
 @implementation Snake
-@synthesize direction,head,length,isMove,hasEaten,bodyArray,delegate;
+@synthesize direction,head,length,isMove,hasEaten,bodyArray;
 
 - (id)initSnake
 {
