@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface Food : NSObject
+{
+    CGRect foodRect;         //the CGRect of Food
+}
+
+@property (assign) CGRect foodRect;
+
+- (id)initWithX:(int)x andY:(int)y;
 
 @end

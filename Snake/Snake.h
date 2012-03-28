@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SnakeState.h"
+#import "Food.h"
+
 enum {
     goLeft = 0,
     goRight = 1,
@@ -26,6 +28,7 @@ typedef NSUInteger SnakeDirection;
     CGPoint head;                 //the head of snake's frame X and Y   (Deprecate maybe)
     int  length;                  //snake length, body number
     NSMutableArray *bodyArray;    //store the snake's bodies
+    Food *theFood;
 }
 
 @property (assign) id<SnakeState>  delegate;
@@ -35,8 +38,10 @@ typedef NSUInteger SnakeDirection;
 @property (assign) BOOL isMove;
 @property (assign) SnakeDirection direction;
 @property (nonatomic,retain) NSMutableArray *bodyArray;
+@property (nonatomic,retain) Food *theFood;
 
 - (id)initSnake;
+- (void)initTheFood;
 - (void)move;
 - (void)detectSnakeState;
 - (void)didMoveToDirection:(SnakeDirection)sdirection;

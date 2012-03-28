@@ -9,7 +9,7 @@
 #import "Snake.h"
 // hello zhung
 @implementation Snake
-@synthesize direction,head,length,isMove,hasEaten,bodyArray,delegate;
+@synthesize direction,head,length,isMove,hasEaten,bodyArray,delegate,theFood;
 
 - (id)initSnake
 {
@@ -38,6 +38,17 @@
 	[super dealloc];
 }
 
+- (void)initTheFood
+{
+    int x = (arc4random() % 48);
+    int y = (arc4random() % 36);
+
+    Food *afood = [[Food alloc] initWithX:10*x andY:10*y];
+    self.theFood = afood;
+    [afood release];
+    
+}
+
 - (void)move
 {
     //根据蛇的前进方向,添加一个新的蛇头,然后删掉一个蛇尾
@@ -49,8 +60,11 @@
     CGPoint p;
     
     //delete the snake tail
-    [bodyArray removeLastObject];
-    
+    if (!hasEaten) {
+        [bodyArray removeLastObject];
+    }else{
+        hasEaten = NO;
+    }
     //add a new snake head
     switch (self.direction) {
         case goUp:
@@ -78,12 +92,20 @@
 
 - (void)detectSnakeState
 {
+    SnakeBody *headBody = [self.bodyArray objectAtIndex:0];
     //touch itself,die   game over
-    //touch wall,die     game over
-//    [delegate SnakeDidDie];
-
-    //eat food        length+1....       (later,maybe add score and raise speed)
     
+    //touch wall,die     game over
+    if (headBody.bodyRect.origin.x<0||headBody.bodyRect.origin.x>480||headBody.bodyRect.origin.y<0||headBody.bodyRect.origin.y>360) {
+        [self.delegate SnakeDidDie];
+    }
+
+    
+    //eat food        length+1....       (later,maybe add score and raise speed)
+    if (CGRectEqualToRect(headBody.bodyRect,self.theFood.foodRect)) {
+        hasEaten = YES;
+        [self initTheFood];
+    }
 }
 
 - (void)didMoveToDirection:(SnakeDirection)sdirection

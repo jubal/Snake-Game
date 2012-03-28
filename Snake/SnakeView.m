@@ -31,11 +31,13 @@
 - (void)gameInit
 {
     //initialize the snake
-    Snake *aSnake = [[Snake alloc] initSnake];  
+    Snake *aSnake = [[Snake alloc] initSnake];
+    aSnake.delegate = self;
     self.snake = aSnake;
+    //init food............
+    [aSnake initTheFood];
     [aSnake release];
     
-    //init food............
     
     //start the game timer
     [self performSelectorOnMainThread:@selector(gamePlay) withObject:nil waitUntilDone:YES];
@@ -54,7 +56,11 @@
 
 - (void)gameOver
 {
-    //..........
+    NSLog(@"gameOver");
+    if (timer) {
+        [timer invalidate];
+        timer = nil;
+    }
 }
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -63,10 +69,14 @@
     [[NSColor darkGrayColor] set];
 
     //get every body of the snake, and draw using NSRectFill
-    for (int i = 0; i < self.snake.length; i++) {
+    for (int i = 0; i < [self.snake.bodyArray count]; i++) {
         SnakeBody *body = [self.snake.bodyArray objectAtIndex:i];
         NSRectFill(body.bodyRect);
     }
+    
+    [[NSColor blackColor] set];
+    NSRectFill(self.snake.theFood.foodRect);
+
 }
 
 - (BOOL)isFlipped
